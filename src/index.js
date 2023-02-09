@@ -1,4 +1,3 @@
-// //Arrays of days
 function formDateValue() {
   let days = [
     "Sunday",
@@ -22,7 +21,7 @@ function formDateValue() {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let nowDate = document.querySelector("#now-date");
+  let nowDate = document.querySelector("#now-Date");
   nowDate.innerHTML = `${dateNow}, ${day} ${hour}:${minutes}`;
 }
 formDateValue();
@@ -45,17 +44,26 @@ function searchCity(city) {
 //location api
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let city = response.data.name;
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = `it is currently ${temperature}º in ${city}`;
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city");
+  let iconElement = document.querySelector("#weatherIcon");
+  let descriptionElement = document.querySelector("#description");
+  degreeTemperature = Math.round(response.data.main.temp);
 
+  cityElement.innerHTML = response.data.name;
+  temperatureElement.innerHTML = degreeTemperature;
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}`;
   document.querySelector("#wind").innerHTML = `Wind: ${Math.round(
     response.data.wind.speed
   )}`;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 //Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.
@@ -67,11 +75,3 @@ function searchLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showTemperature);
 }
-
-function showCurrentLocation(event) {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
-}
-
-let currentLocationButton = document.querySelector("#current-location-Button");
-currentLocationButton.addEventListener("click", showCurrentLocation);
