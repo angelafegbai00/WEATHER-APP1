@@ -1,23 +1,48 @@
-.container {
-  border: 1px solid grey;
-  padding: 10px;
-  margin: 20px auto;
-  border-radius: 10px;
-  max-width: 600;
-  display: block;
-  background-color: plum;
-}
-.searchCity {
-  margin: 20px;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: pink;
 }
 
-.searchButton {
-  margin: 0;
-  background-color: whitesmoke;
+.weatherAppContainer {
+  max-width: 600px;
+  margin: 30px auto;
+}
+.weatherApp {
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.degreeCelsuis {
+  font-size: 30px;
+  margin-top: 10px;
+  font-weight: 400;
+  position: relative;
+}
+.celsuis {
+  font-size: 18px;
+  position: relative;
+  top: -12px;
 }
 
-.col {
-  margin: 0;
-  padding: 5px;
-  width: 50px;
+h1 {
+  color: coral;
+  font-size: 30px;
+  line-height: 25px;
+  font-weight: 100;
+  margin-bottom: 0%;
+}
+
+ul {
+  margin: 0 auto;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 17px;
+  padding: 0%;
+  margin: 0%;
 }
