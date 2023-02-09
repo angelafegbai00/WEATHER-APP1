@@ -17,73 +17,67 @@
 
 <body>
     <div class="container">
-        <form id="search-form">
-            <input class="city-input" type="text" placeholder="Enter a city" id="search-city-input">
-
-            <button type="submit" id=searchButton class="searchButtonClass">Search
-            </button>
-            <button type="button" class="btn btn-primary btn-sm" id="current-location-Button">Current Location
-            </button>
-        </form>
-        <h1>
-            <span id="updateCity">
-                <i class="fa-solid fa-cloud-rain">
-                </i>
-            </span>
-            Manchester, Uk
-            <div>
-                3°c
-            </div>
-        </h1>
-        <h2 id="now-date">
-            Saturday 5:40pm
-        </h2>
-        <div>
-            Precipation: 93%
-        </div>
-        <div id="humidity">
-            Humidity: 95%
-        </div>
-        <div id="wind">
-            Wind: 6mph
-        </div>
-        <br />
-        <div>
-            <div class="row">
-                <div class="col-1">
-                    SAT
-                    <br />
-                    <i class="fa-solid fa-cloud-rain"></i>
-                </div>
-                <div class="col-1">
-                    SUN
-                    <br />
-                    <i class="fa-solid fa-cloud-showers-heavy"></i>
-                </div>
-                <div class="col-1">
-                    MON
-                    <br />
-                    <i class="fa-solid fa-cloud-moon"></i>
-                </div>
-                <div class="col-1">
-                    TUE
-                    <br />
-                    <i class="fa-solid fa-cloud-sun-rain"></i>
-                </div>
-                <div class="col-1">
-                    WED
-                    <br />
-                    <i class="fa-solid fa-cloud-moon-rain"></i>
-                </div>
-                <div class="col-1">
-                    THU
-                    <br />
-                    <i class="fa-solid fa-cloud-rain"></i>
+        <div class="weatherAppContainer">
+            <div class="weatherApp">
+                <form id="search-form" class="mb-3">
+                    <div class="row">
+                        <div class="col-9">
+                            <input type="search" placeholder="Enter a city.." class="form-control"
+                                id="search-city-input" autocomplete="off" />
+                        </div>
+                        <div class="col-3">
+                            <input type="submit" value="Search" class="btn btn-primary w-100" id="searchButton" />
+                        </div>
+                    </div>
+                </form>
+                <h1 id="city">
+                    Manchester
+                </h1>
+                <ul>
+                    <li>
+                        <span id="now-Date">
+                            Saturday 10:30
+                        </span>
+                    </li>
+                    <li>
+                        <span id="description"> </span>
+                        clear
+                    </li>
+                </ul>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span class="weather-icon">
+                            <small>
+                                <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="cloud" id="weatherIcon" />
+                            </small>
+                        </span>
+                        <span class="degreeCelsuis">
+                            <strong id="temperature">10</strong><span class="celsuis">°C | °F</span>
+                        </span>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li>
+                                <span id="humidity">
+                                    Humidity: 65
+                                </span>
+                            </li>
+                            <li>
+                                <span id="wind">
+                                    Wind: 0
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <small>
+                Open source: Angel Afegbai
+            </small>
         </div>
-        <a href="https://github.com/angelafegbai00/WEATHER-APP1" target="_blank"> git hub profile </a>
-        <script src="src/index.js"></script>
+    </div>
+    <a href="https://github.com/angelafegbai00/WEATHER-APP1" target="_blank"> git hub profile </a>
+    <script src="src/index.js"></script>
 
 
 
