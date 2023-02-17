@@ -91,7 +91,7 @@ function showTemperature(response) {
   let cityElement = document.querySelector("#city");
   let iconElement = document.querySelector("#weatherIcon");
   let descriptionElement = document.querySelector("#description");
-  degreeTemperature = Math.round(response.data.temperature.current);
+  let degreeTemperature = Math.round(response.data.temperature.current);
 
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = degreeTemperature;
@@ -108,12 +108,4 @@ function showTemperature(response) {
   getForecast(response.data.coordinates);
 }
 
-//Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.
-
-function searchLocation(position) {
-  let apiKey = "5d95fd50506eedab42e7a378d353b99a";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrl).then(showTemperature);
-}
+searchCity("manchester");
